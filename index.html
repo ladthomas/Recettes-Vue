@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.min.css"> 
+    <title>Recettes de Cuisine</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@3"></script>
+</head>
+<body>
+        <h1>Recettes de Cuisine</h1>
+    <div id="app">
+        
+        <!-- Formulaire -->
+
+        <form @submit.prevent="addRecipe">
+            <label for="recipeName">Nom</label>
+            <input type="text" id="recipeName" v-model="newRecipe.name" required>
+
+            <label for="recipeIngredients">Ingrédients</label>
+            <textarea id="recipeIngredients" v-model="newRecipe.ingredients" required></textarea>
+
+            <label for="recipePreparation">Préparation</label>
+            <textarea id="recipePreparation" v-model="newRecipe.preparation" required></textarea>
+
+            <label for="recipeTime">Temps de préparation (en minutes)</label>
+            <input type="number" id="recipeTime" v-model="newRecipe.time" required>
+
+            <label for="recipePeople">Nombre de personnes</label>
+            <input type="number" id="recipePeople" v-model="newRecipe.people" required>
+
+            <button type="submit">Ajouter Recette</button>
+        </form>
+
+        <!-- Liste des recettes -->
+        <ul>
+            <li v-for="recipe in recipes" :key="recipe.id">
+                <h2>{{ recipe.name }}</h2>
+                <p>Ingrédients: {{ recipe.ingredients }}</p>
+                <p>Préparation: {{ recipe.preparation }}</p>
+                <p>Temps de préparation: {{ recipe.time }} minutes</p>
+                <p>Nombre de personnes: {{ recipe.people }}</p>
+                <button @click="deleteRecipe(recipe.id)">Supprimer</button>
+            
+            </li>
+        </ul>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
