@@ -65,7 +65,7 @@ permettant de supprimer cette recette.
 
 ## Gestion des versions
 
-Les versions disponibles ainsi que les journaux décrivant les changements apportés sont disponibles depuis  [Gestion sémantique de version](https://semver.org/lang/fr/)
+Les versions disponibles ainsi que les journaux décrivant les changements apportés sont disponibles depuis  [Gestion sémantique de version](https://recettes-de-cuis.netlify.app/)
 
 
 
